@@ -55,48 +55,13 @@ public class App {
 		PartecipazioneDAO partecipazioneDao = new PartecipazioneDAO(entityManager);
 
 		// - - - - - - - - - - - - - - - - - - - - SAVE
-		System.out.println("");
-		System.out.println("");
-		System.out.println("- - - - - - - - - - - - - - - eventoDAO.save");
-		System.out.println("");
-		// eventoDao.save(primoEvento);
+		eventoDao.save(primoEvento);
 		eventoDao.save(secondoEvento);
-		// eventoDao.save(terzoEvento);
+		eventoDao.save(terzoEvento);
 
-		System.out.println("");
-		System.out.println("Nel database sono stati salvati i seguenti oggetti:");
-		System.out.println(primoEvento);
-		System.out.println(secondoEvento);
-		System.out.println(terzoEvento);
-
-		// - - - - - - - - - - - - - - - - - - - - FIND BY ID
-		System.out.println("");
-		System.out.println("");
-		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findById");
-		System.out.println("");
-		Evento eventoCercato = eventoDao.findById(1);
-		System.out.println("Nel database è presente il seguente oggetto con id = " + eventoCercato.getId());
-		System.out.println(eventoCercato);
-
-		// - - - - - - - - - - - - - - - - - - - - FIND BY ID AND DELETE
-
-		Evento eventoDaCancellare = eventoDao.findById(2);
-
-		System.out.println("");
-		System.out.println("");
-		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findByIdAndDelete");
-		System.out.println("");
-		eventoDao.findByIdAndDelete(2);
-		System.out
-				.println("Nel database è stato cancellato il seguente oggetto con id = " + eventoDaCancellare.getId());
-		System.out.println(eventoDaCancellare);
-
-		// - - - - - - - - - - - - - - - - - - - - REFRESH
-		System.out.println("");
-		System.out.println("");
-		System.out.println("- - - - - - - - - - - - - - - eventoDAO.findByIdAndDelete");
-		System.out.println("");
-		eventoDao.refresh(3);
+		partecipazioneDao.save(primaPartecipazione);
+		partecipazioneDao.save(secondaPartecipazione);
+		partecipazioneDao.save(terzaPartecipazione);
 
 		// - - - - - - - - - - - - - - - - - - - - entityManager & entityManagerFactory
 		// closing
