@@ -1,9 +1,11 @@
 package gestioneEventi;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -27,7 +29,9 @@ public class Persona {
 	private String email;
 	private LocalDate dataNascita;
 	private Sesso sesso;
-	// *** TODO *** listaPartecipazioni ORDINATA PER dataEvento
+
+	@OneToMany(mappedBy = "persona")
+	private Set<Partecipazione> listaPartecipazioni;
 
 	// costruttori, getters e setters...
 	public Persona() {
@@ -41,6 +45,17 @@ public class Persona {
 		this.email = _email;
 		this.dataNascita = _dataNascita;
 		this.sesso = _sesso;
+	}
+
+	public Persona(long _id, String _nome, String _cognome, String _email, LocalDate _dataNascita, Sesso _sesso,
+			Set<Partecipazione> _listaPartecipazioni) {
+		this.id = _id;
+		this.nome = _nome;
+		this.cognome = _cognome;
+		this.email = _email;
+		this.dataNascita = _dataNascita;
+		this.sesso = _sesso;
+		this.listaPartecipazioni = _listaPartecipazioni;
 	}
 
 	public long getId() {
@@ -85,6 +100,14 @@ public class Persona {
 
 	public void setSesso(Sesso _sesso) {
 		this.sesso = _sesso;
+	}
+
+	public Set<Partecipazione> getListaPartecipazioni() {
+		return listaPartecipazioni;
+	}
+
+	public void setListaPartecipazioni(Set<Partecipazione> _listaPartecipazioni) {
+		this.listaPartecipazioni = _listaPartecipazioni;
 	}
 
 	@Override

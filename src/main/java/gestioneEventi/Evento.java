@@ -1,9 +1,12 @@
 package gestioneEventi;
 
 import java.time.LocalDate;
+import java.util.Set;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -28,6 +31,12 @@ public class Evento {
 	private TipoEvento tipoEvento;
 	private int numeroMassimoPartecipanti;
 
+	@OneToMany(mappedBy = "evento")
+	private Set<Partecipazione> partecipazioni;
+
+	@OneToOne
+	private Location location;
+
 	// costruttori, getters e setters...
 	public Evento() {
 
@@ -41,6 +50,18 @@ public class Evento {
 		this.descrizione = _descrizione;
 		this.tipoEvento = _tipoEvento;
 		this.numeroMassimoPartecipanti = _numeroMassimoPartecipanti;
+	}
+
+	public Evento(long _id, String _titolo, LocalDate _dataEvento, String _descrizione, TipoEvento _tipoEvento,
+			int _numeroMassimoPartecipanti, Set<Partecipazione> _partecipazioni, Location _location) {
+		this.id = _id;
+		this.titolo = _titolo;
+		this.dataEvento = _dataEvento;
+		this.descrizione = _descrizione;
+		this.tipoEvento = _tipoEvento;
+		this.numeroMassimoPartecipanti = _numeroMassimoPartecipanti;
+		this.partecipazioni = _partecipazioni;
+		this.location = _location;
 	}
 
 	public long getId() {
@@ -85,6 +106,22 @@ public class Evento {
 
 	public void setNumeroMassimoPartecipanti(int _numeroMassimoPartecipanti) {
 		this.numeroMassimoPartecipanti = _numeroMassimoPartecipanti;
+	}
+
+	public Set<Partecipazione> getPartecipazioni() {
+		return partecipazioni;
+	}
+
+	public void setPartecipazioni(Set<Partecipazione> _partecipazioni) {
+		this.partecipazioni = _partecipazioni;
+	}
+
+	public Location getLocation() {
+		return location;
+	}
+
+	public void setLocation(Location _location) {
+		this.location = _location;
 	}
 
 	@Override
