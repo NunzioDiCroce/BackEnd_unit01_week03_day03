@@ -10,13 +10,6 @@ import javax.persistence.Table;
 
 public class Location {
 
-	// id (chiave primaria)
-	//
-	//
-	//
-	//
-	//
-
 	@Id
 	// @GeneratedValue
 	private long id;

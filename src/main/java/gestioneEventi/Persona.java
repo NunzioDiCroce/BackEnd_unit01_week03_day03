@@ -13,13 +13,6 @@ import javax.persistence.Table;
 
 public class Persona {
 
-	// id (chiave primaria)
-	//
-	//
-	//
-	//
-	//
-
 	@Id
 	// @GeneratedValue
 	private long id;

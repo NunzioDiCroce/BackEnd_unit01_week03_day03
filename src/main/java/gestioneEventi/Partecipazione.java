@@ -11,13 +11,6 @@ import javax.persistence.Table;
 
 public class Partecipazione {
 
-	// id (chiave primaria)
-	//
-	//
-	//
-	//
-	//
-
 	@Id
 	// @GeneratedValue
 	private long id;
