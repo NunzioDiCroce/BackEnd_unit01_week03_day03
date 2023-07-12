@@ -20,9 +20,6 @@ public class App {
 				.println("- - - - - - - - - - - - - - - App Gestione Eventi is running - - - - - - - - - - - - - - -");
 
 		// - - - - - - - - - - - - - - - - - - - - OBJECTS CREATION
-		// public Evento(String _titolo, LocalDate _dataEvento, String _descrizione,
-		// TipoEvento _tipoEvento,
-		// int _numeroMassimoPartecipanti)
 		LocalDate primaData = LocalDate.of(2023, 7, 1);
 		Evento primoEvento = new Evento(1, "primoEvento", primaData, "primaDescrizione", TipoEvento.PRIVATO, 100);
 
@@ -33,32 +30,44 @@ public class App {
 		LocalDate terzaData = LocalDate.of(2023, 7, 1);
 		Evento terzoEvento = new Evento(3, "terzoEvento", terzaData, "terzaDescrizione", TipoEvento.PUBBLICO, 1000);
 
-		LocalDate quartaData = LocalDate.of(2023, 7, 1);
-		Evento quartoEvento = new Evento(4, "quartoEvento", quartaData, "quartaDescrizione", TipoEvento.PUBBLICO, 2000);
+		Partecipazione primaPartecipazione = new Partecipazione(1, Stato.CONFERMATA);
+		Partecipazione secondaPartecipazione = new Partecipazione(2, Stato.CONFERMATA);
+		Partecipazione terzaPartecipazione = new Partecipazione(3, Stato.DA_CONFERMARE);
 
-		LocalDate quintaData = LocalDate.of(2023, 7, 1);
-		Evento quintoEvento = new Evento(5, "quintoEvento", quintaData, "quintaDescrizione", TipoEvento.PUBBLICO, 3000);
+		Location primaLocation = new Location(1, "primaLocation", "Milano");
+		Location secondaLocation = new Location(2, "secondaLocation", "Roma");
+		Location terzaLocation = new Location(3, "terzaLocation", "Napoli");
+
+		LocalDate primaPersonaData = LocalDate.of(1990, 8, 1);
+		Persona primaPersona = new Persona(1, "Mario", "Rossi", "mario.rossi@mail.com", primaPersonaData,
+				Sesso.MASCHIO);
+
+		LocalDate secondaPersonaData = LocalDate.of(1990, 8, 1);
+		Persona secondaPersona = new Persona(1, "Paolo", "Bianchi", "paolo.bianchi@mail.com", secondaPersonaData,
+				Sesso.MASCHIO);
+
+		LocalDate terzaPersonaData = LocalDate.of(1990, 8, 1);
+		Persona terzaPersona = new Persona(1, "Giovanni", "Gianni", "giovanni.gianni@mail.com", terzaPersonaData,
+				Sesso.MASCHIO);
 
 		// - - - - - - - - - - - - - - - - - - - - DAO OBJECT CREATION
 		EventoDAO eventoDao = new EventoDAO(entityManager);
+		PartecipazioneDAO partecipazioneDao = new PartecipazioneDAO(entityManager);
 
 		// - - - - - - - - - - - - - - - - - - - - SAVE
 		System.out.println("");
 		System.out.println("");
 		System.out.println("- - - - - - - - - - - - - - - eventoDAO.save");
 		System.out.println("");
-		// eventoDao.save(primoEvento); // da inibire perché già salvato nel db
+		// eventoDao.save(primoEvento);
 		eventoDao.save(secondoEvento);
-		// eventoDao.save(terzoEvento); // da inibire perché già salvato nel db
-		// eventoDao.save(quartoEvento); // da inibire perché già salvato nel db
-		// eventoDao.save(quintoEvento); // da inibire perché già salvato nel db
+		// eventoDao.save(terzoEvento);
+
 		System.out.println("");
 		System.out.println("Nel database sono stati salvati i seguenti oggetti:");
 		System.out.println(primoEvento);
 		System.out.println(secondoEvento);
 		System.out.println(terzoEvento);
-		System.out.println(quartoEvento);
-		System.out.println(quintoEvento);
 
 		// - - - - - - - - - - - - - - - - - - - - FIND BY ID
 		System.out.println("");
