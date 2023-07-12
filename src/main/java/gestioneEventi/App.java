@@ -37,7 +37,7 @@ public class App {
 		Evento quartoEvento = new Evento(4, "quartoEvento", quartaData, "quartaDescrizione", TipoEvento.PUBBLICO, 2000);
 
 		LocalDate quintaData = LocalDate.of(2023, 7, 1);
-		Evento quintoEvento = new Evento(5, "quintiEvento", quintaData, "quintaDescrizione", TipoEvento.PUBBLICO, 3000);
+		Evento quintoEvento = new Evento(5, "quintoEvento", quintaData, "quintaDescrizione", TipoEvento.PUBBLICO, 3000);
 
 		// - - - - - - - - - - - - - - - - - - - - DAO OBJECT CREATION
 		EventoDAO eventoDao = new EventoDAO(entityManager);
@@ -47,11 +47,11 @@ public class App {
 		System.out.println("");
 		System.out.println("- - - - - - - - - - - - - - - eventoDAO.save");
 		System.out.println("");
-		// eventoDao.save(primoEvento); da inibire perché già salvato nel db
+		// eventoDao.save(primoEvento); // da inibire perché già salvato nel db
 		eventoDao.save(secondoEvento);
-		// eventoDao.save(terzoEvento); da inibire perché già salvato nel db
-		// eventoDao.save(quartoEvento); da inibire perché già salvato nel db
-		// eventoDao.save(quintoEvento); da inibire perché già salvato nel db
+		// eventoDao.save(terzoEvento); // da inibire perché già salvato nel db
+		// eventoDao.save(quartoEvento); // da inibire perché già salvato nel db
+		// eventoDao.save(quintoEvento); // da inibire perché già salvato nel db
 		System.out.println("");
 		System.out.println("Nel database sono stati salvati i seguenti oggetti:");
 		System.out.println(primoEvento);
