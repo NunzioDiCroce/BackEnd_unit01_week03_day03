@@ -70,6 +70,15 @@ public class App {
 //		personaDao.save(secondaPersona);
 //		personaDao.save(terzaPersona);
 
+		// primoEvento.setLocation(primaLocation);
+		// eventoDao.save(primoEvento);
+
+		secondoEvento.setLocation(secondaLocation);
+		eventoDao.save(secondoEvento);
+
+		terzoEvento.setLocation(terzaLocation);
+		eventoDao.save(terzoEvento);
+
 		// - - - - - - - - - - - - - - - - - - - - entityManager & entityManagerFactory
 		// closing
 		entityManager.close();
