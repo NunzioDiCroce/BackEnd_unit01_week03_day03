@@ -53,31 +53,36 @@ public class App {
 		LocationDAO locationDao = new LocationDAO(entityManager);
 		PersonaDAO personaDao = new PersonaDAO(entityManager);
 
-		// - - - - - - - - - - - - - - - - - - - - SAVE
+		// - - - - - - - - - - - - - - - - - - - - SETTING & SAVING
+
+//		primoEvento.setLocation(primaLocation);
 //		eventoDao.save(primoEvento);
+//
+//		secondoEvento.setLocation(secondaLocation);
 //		eventoDao.save(secondoEvento);
+//
+//		terzoEvento.setLocation(terzaLocation);
 //		eventoDao.save(terzoEvento);
-//
-//		partecipazioneDao.save(primaPartecipazione);
-//		partecipazioneDao.save(secondaPartecipazione);
-//		partecipazioneDao.save(terzaPartecipazione);
-//
-//		locationDao.save(primaLocation);
-//		locationDao.save(secondaLocation);
-//		locationDao.save(terzaLocation);
-//
+
 //		personaDao.save(primaPersona);
 //		personaDao.save(secondaPersona);
 //		personaDao.save(terzaPersona);
 
-		// primoEvento.setLocation(primaLocation);
-		// eventoDao.save(primoEvento);
+//		primaPartecipazione.setEvento(primoEvento);
+//		primaPartecipazione.setPersona(primaPersona);
+//		partecipazioneDao.save(primaPartecipazione);
+//
+//		secondaPartecipazione.setEvento(secondoEvento);
+//		secondaPartecipazione.setPersona(secondaPersona);
+//		partecipazioneDao.save(secondaPartecipazione);
+//
+//		terzaPartecipazione.setEvento(terzoEvento);
+//		terzaPartecipazione.setPersona(terzaPersona);
+//		partecipazioneDao.save(terzaPartecipazione);
 
-		secondoEvento.setLocation(secondaLocation);
-		eventoDao.save(secondoEvento);
-
-		terzoEvento.setLocation(terzaLocation);
-		eventoDao.save(terzoEvento);
+//		locationDao.save(primaLocation);
+//		locationDao.save(secondaLocation);
+//		locationDao.save(terzaLocation);
 
 		// - - - - - - - - - - - - - - - - - - - - entityManager & entityManagerFactory
 		// closing
